@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You might be the Weiner!!</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sparkles" id="sparkles"></div>
+
+  <h2>You might be the Weiner!!</h2>
+
+  <!-- A hotdog, drawn with shapes instead of a photo so it can never break -->
+  <svg class="hotdog" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hotdog with mustard">
+    <!-- top half of the bun -->
+    <rect x="20" y="35" width="360" height="75" rx="37"
+          fill="#F0C078" stroke="#C98B45" stroke-width="6"/>
+
+    <!-- the sausage in the middle -->
+    <rect x="42" y="78" width="316" height="72" rx="36"
+          fill="#C6482E" stroke="#9E3520" stroke-width="6"/>
+
+    <!-- squiggle of mustard -->
+    <polyline points="72,122 112,96 152,122 192,96 232,122 272,96 312,122 340,104"
+              fill="none" stroke="#FFD447" stroke-width="12"
+              stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- bottom half of the bun, in front so the sausage sits inside -->
+    <rect x="20" y="118" width="360" height="75" rx="37"
+          fill="#E8B36B" stroke="#C98B45" stroke-width="6"/>
+  </svg>
+
+  <div class="buttons">
+    <a class="btn" href="index.html">back</a>
+  </div>
+
+  <script>
+    const box = document.getElementById('sparkles');
+
+    for (let i = 0; i < 40; i++) {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.top = Math.random() * 100 + 'vh';
+      s.style.animationDelay = Math.random() * 3 + 's';
+      const size = 6 + Math.random() * 14;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      box.appendChild(s);
+    }
+  </script>
+
+</body>
+</html>

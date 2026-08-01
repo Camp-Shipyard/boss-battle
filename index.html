@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOSS BATTLE</title>
+
+  <!-- Sparkly-looking chunky font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- sparkles get added in here by the script at the bottom -->
+  <div class="sparkles" id="sparkles"></div>
+
+  <h1>BOSS BATTLE</h1>
+
+  <div class="buttons">
+    <!-- This button does absolutely nothing. On purpose. -->
+    <button class="btn" type="button">this goes no where</button>
+
+    <!-- This one takes you to page 2 -->
+    <a class="btn btn-next" href="hotdog.html">next</a>
+  </div>
+
+  <script>
+    // Make 40 sparkles at random spots, each with its own timing
+    const box = document.getElementById('sparkles');
+
+    for (let i = 0; i < 40; i++) {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.top = Math.random() * 100 + 'vh';
+      s.style.animationDelay = Math.random() * 3 + 's';
+      const size = 6 + Math.random() * 14;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      box.appendChild(s);
+    }
+  </script>
+
+</body>
+</html>
